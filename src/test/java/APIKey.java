@@ -44,6 +44,7 @@ public class APIKey {
                 .when()
                 .get("http://api.weatherapi.com/v1/current.json")
                 .then()
+                .statusCode(405)
                 .extract().response();
 
         float temp_C=response.path("current.temp_c");
